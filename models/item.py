@@ -16,7 +16,11 @@ class ItemModel(db.Model):
         self.store_id = store_id
     
     def json(self):
-        return {"name": self.name, "price": self.price, 'store': self.store_id}
+        return {'id': self.id,
+                'name': self.name,
+                'price': self.price,
+                'store_id': self.store_id
+        }
     
     @classmethod
     def get_all_items(cls):
