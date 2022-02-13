@@ -14,10 +14,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False #Turning off flask modifica
 app.secret_key = 'jose'
 api = Api(app)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
 #app.config['JWT_AUTH_URL_RULE'] = '/auth'
 #app.config['JWT_EXPIRATION_DELTA'] = timedelta(seconds=1800) # config JWT to expire within half an hour
 #app.config['JWT_AUTH_USERNAME_KEY'] = 'email' # config JWT auth key name to be 'email' instead of default 'username'
